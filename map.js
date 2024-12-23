@@ -26,7 +26,9 @@ const truthValuesOf = function (numbers) {
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 
-const reversedStringsOf = function (strings) {};
+const reversedStringsOf = function (strings) {
+  return strings.map((string) => string.split("").reverse().join(""));
+};
 
 // double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
 const doubleLettersOf = function (strings) {};
