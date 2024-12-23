@@ -32,10 +32,7 @@ const reversedStringsOf = function (strings) {
 
 // double letters of ["cat", "dog", "bat"] => ["ccaatt", "ddoogg", "bbaatt"]
 const doubleLetters = function (string) {
-  return string
-    .split("")
-    .map((letter) => letter.repeat(2))
-    .join("");
+  return [...string].map((char) => char.repeat(2)).join("");
 };
 
 const doubleLettersOf = function (strings) {
@@ -65,9 +62,7 @@ const domainNamesOf = function (emails) {
 };
 
 // split words in ["hello world", "goodbye moon"] => [["hello", "world"], ["goodbye", "moon"]]
-const splitWordsOf = function (strings) {
-  return strings.map((string) => string.split(" "));
-};
+const splitWordsOf = (strings) => strings.map((string) => string.split(" "));
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
 const joinedArraysOf = function (arrayOfArrays) {
