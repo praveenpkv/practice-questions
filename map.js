@@ -54,16 +54,30 @@ const charCodesOf = function (strings) {
 };
 
 // extract domain names from ["user1@gmail.com", "admin@yahoo.com"] => ["gmail.com", "yahoo.com"]
-const domainNamesOf = function (emails) {};
+const getDomain = function (email) {
+  const start = email.indexOf("@") + 1;
+
+  return email.slice(start);
+};
+
+const domainNamesOf = function (emails) {
+  return emails.map(getDomain);
+};
 
 // split words in ["hello world", "goodbye moon"] => [["hello", "world"], ["goodbye", "moon"]]
-const splitWordsOf = function (strings) {};
+const splitWordsOf = function (strings) {
+  return strings.map((string) => string.split(" "));
+};
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
-const joinedArraysOf = function (arrayOfArrays) {};
+const joinedArraysOf = function (arrayOfArrays) {
+  return arrayOfArrays.map((array) => array.join(""));
+};
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
-const repeatedStringsOf = function (strings) {};
+const repeatedStringsOf = function (strings) {
+  return strings.map((string) => string.repeat(2));
+};
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
 const countVowelsOf = function (strings) {};
