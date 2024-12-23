@@ -1,6 +1,6 @@
 // squares of [1, 2, 3] => [1, 4, 9]
 const squaresOf = function (numbers) {
-  return numbers.map((x) => x * x);
+  return numbers.map((x) => Math.pow(x, 2));
 };
 
 // lengths of ["apple", "banana", "kiwi"] => [5, 6, 4]
@@ -80,10 +80,25 @@ const repeatedStringsOf = function (strings) {
 };
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
-const countVowelsOf = function (strings) {};
+const countVowels = function (string) {
+  const vowels = "aeiouAEIOU";
+  let noOfVowels = 0;
+
+  for (let index = 0; index < string.length; index++) {
+    if (vowels.includes(string[index])) noOfVowels += 1;
+  }
+
+  return noOfVowels;
+};
+
+const countVowelsOf = function (strings) {
+  return strings.map(countVowels);
+};
 
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
-const reversedArraysOf = function (arrays) {};
+const reversedArraysOf = function (arrays) {
+  return arrays.map((array) => array.reverse());
+};
 
 // remove vowels from ["apple", "banana", "grape"] => ["ppl", "bnn", "grp"]
 const withoutVowelsOf = function (strings) {};
