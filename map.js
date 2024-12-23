@@ -30,8 +30,17 @@ const reversedStringsOf = function (strings) {
   return strings.map((string) => string.split("").reverse().join(""));
 };
 
-// double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
-const doubleLettersOf = function (strings) {};
+// double letters of ["cat", "dog", "bat"] => ["ccaatt", "ddoogg", "bbaatt"]
+const doubleLetters = function (string) {
+  return string
+    .split("")
+    .map((letter) => letter.repeat(2))
+    .join("");
+};
+
+const doubleLettersOf = function (strings) {
+  return strings.map(doubleLetters);
+};
 
 // boolean negation of [true, false, true] => [false, true, false]
 const negatedBooleansOf = function (booleans) {
