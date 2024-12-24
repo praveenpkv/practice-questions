@@ -96,11 +96,31 @@ const reversedArraysOf = function (arrays) {
 };
 
 // remove vowels from ["apple", "banana", "grape"] => ["ppl", "bnn", "grp"]
-const withoutVowelsOf = function (strings) {};
+
+const isNotVowel = (char) => !"AEIOUaeiou".includes(char);
+
+// const stringFilter = (string, predicate) =>
+//   [...string].filter(predicate).join("");
+
+const withoutVowelsOf = function (strings) {
+  return strings.map((string) => [...string].filter(isNotVowel).join(""));
+};
 
 // cumulative sums of [[1, 2, 3], [4, 5, 6]] => [[1, 3, 6], [4, 9, 15]]
 // Example: cumulative sum of [1, 2, 3] is [1, 1+2, 1+2+3]
-const cumulativeSumsOf = function (arrays) {};
+
+const cumulativeSum = function () {
+  let previousSum = 0;
+
+  return function (y) {
+    previousSum += y;
+    return previousSum;
+  };
+};
+
+const cumulativeSumsOf = function (arrays) {
+  return arrays.map((array) => array.map(cumulativeSum()));
+};
 
 // reverse words in ["hello world", "goodbye moon"] => ["olleh dlrow", "eybdoog noom"]
 const reversedWordsOf = function (strings) {};
