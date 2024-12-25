@@ -27,7 +27,7 @@ const truthValuesOf = function (numbers) {
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 
 const reversedStringsOf = function (strings) {
-  return strings.map((string) => string.split("").reverse().join(""));
+  return strings.map((string) => [...string].reverse().join(""));
 };
 
 // double letters of ["cat", "dog", "bat"] => ["ccaatt", "ddoogg", "bbaatt"]
@@ -99,11 +99,14 @@ const reversedArraysOf = function (arrays) {
 
 const isNotVowel = (char) => !"AEIOUaeiou".includes(char);
 
+const stringFilter = (predicate) => (string) =>
+  [...string].filter(predicate).join("");
+
 // const stringFilter = (string, predicate) =>
 //   [...string].filter(predicate).join("");
 
 const withoutVowelsOf = function (strings) {
-  return strings.map((string) => [...string].filter(isNotVowel).join(""));
+  return strings.map(stringFilter(isNotVowel));
 };
 
 // cumulative sums of [[1, 2, 3], [4, 5, 6]] => [[1, 3, 6], [4, 9, 15]]
@@ -123,17 +126,23 @@ const cumulativeSumsOf = function (arrays) {
 };
 
 // reverse words in ["hello world", "goodbye moon"] => ["olleh dlrow", "eybdoog noom"]
-const reversedWordsOf = function (strings) {};
+const reversedWordsOf = function (strings) {
+  return strings.map((string) => reversedStringsOf([string]));
+};
 
 // extract unique characters from ["apple", "banana", "grape"] => ["apl", "ban", "gra"]
 // Maintain the order of their first appearance in each string
-const uniqueCharactersOf = function (strings) {};
+const uniqueCharactersOf = function (strings) {
+  return strings.map();
+};
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
 const rangesOf = function (numbers) {};
 
 // capitalize first letters of ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
-const capitalizedFirstLettersOf = function (strings) {};
+const capitalizedFirstLettersOf = function (strings) {
+  return;
+};
 
 // find word lengths in ["apple pie", "banana split"] => [[5, 3], [6, 5]]
 const wordLengthsOf = function (strings) {};
